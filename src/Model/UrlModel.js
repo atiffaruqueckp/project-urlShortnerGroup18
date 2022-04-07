@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const ObjectId = mongoose.Schema.Types.ObjectId;
 
 
 const urlSchema = new mongoose.Schema({
@@ -26,3 +27,9 @@ const urlSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 module.exports = mongoose.model('url', urlSchema);
+
+
+
+
+
+

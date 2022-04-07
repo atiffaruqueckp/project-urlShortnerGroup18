@@ -89,6 +89,27 @@ If you haven’t used tinyurl.com before, please try creating a new shortened UR
     "urlCode": "ghfgfg"
   } 
 }
-
 ```
+/*const getUrl = async (req, res) => {
+    try {
+        const urlCodes = req.params.urlCode.trim();
+        const isUrlExist = await UrlModel.findOne({ urlCode: urlCodes });
+    
+       // if (!isValid(urlCodes)) {
+         //   return res.status(400).send({ status: false, msg: "please enter urlcode" })
+       // }
+    
+        if (isUrlExist) {
+            if (urlCodes !== isUrlExist.urlCode) {
+            return res.status(404).send({ status: false, Message: "No Url Found, Please Check Url Code",});
+            }
+            return res.status(302).redirect(isUrlExist.longUrl);
+        }
+    
+    } catch (error) {
+        res.status(500).send({ status: false, Message: error.message });
+    }
+    };
+    module.exports.shortenUrl = shortenUrl;
+    module.exports.getUrl = getUrl;*/
 
